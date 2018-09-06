@@ -49,7 +49,7 @@ namespace DatingApp.API.Data
         {
             var users = await _context.Users.Include(p => p.Photos).ToListAsync();
 
-            return users;
+            return users;  // returning a list of users
         }
 
         public async Task<bool> SaveAll()
