@@ -23,6 +23,14 @@ namespace DatingApp.API.Data
 
          Task<Like> GetLike(int userId, int recipientId);  // check to see if like already exists for user
 
+         Task<Message> GetMessage(int id);  // function to get method from database
+
+         Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams);
+
+         Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId); // method for conversation between 2 users
+
+
+
          
 
     }

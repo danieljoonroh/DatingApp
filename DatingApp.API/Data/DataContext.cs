@@ -15,6 +15,8 @@ namespace DatingApp.API.Data
 
         public DbSet<Like> Likes { get; set; }  // creating a new table in dataset for the likes
 
+        public DbSet<Message> Messages { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)  // overriding like table, then creating a new migration for this so entity framework can know this and database will be updated
         {
             builder.Entity<Like>()
@@ -30,6 +32,11 @@ namespace DatingApp.API.Data
                 .HasOne(u => u.Liker)
                 .WithMany(u => u.Likees)
                 .HasForeignKey(u => u.LikerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Message>()
+                .HasOne(u => u.Sender)
+                .WithMany(m => m.MessagesSent)
                 .OnDelete(DeleteBehavior.Restrict);
 
 
