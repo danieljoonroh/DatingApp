@@ -7,7 +7,7 @@ namespace DatingApp.API.Data
     public class Seed
     {
         private readonly DataContext _context;
-        public Seed(DataContext context)
+        public Seed(DataContext context)  // to save data back to database
         {
             _context = context;
         }

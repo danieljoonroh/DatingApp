@@ -11,7 +11,7 @@ namespace DatingApp.API.Models
 
         public byte[] PasswordHash { get; set; }
 
-        public byte[] PasswordSalt { get; set; }
+        public byte[] PasswordSalt { get; set; }  // acts as a key in order to compare the password the user puts in and to not create identical hashes
 
         public string Gender { get; set; }
 
@@ -34,5 +34,9 @@ namespace DatingApp.API.Models
         public string Country { get; set; }
 
         public ICollection<Photo> Photos { get; set; }
+
+        public ICollection<Like> Likers { get; set; }
+
+        public ICollection<Like> Likees { get; set; }
     }
 }

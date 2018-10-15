@@ -40,10 +40,10 @@ namespace DatingApp.API.Data
 
         }
 
-        public async Task<User> Register(User user, string password)
+        public async Task<User> Register(User user, string password)  // have to do async await because we are returning a Task<User>
         {
             byte[] passwordHash, passwordSalt;
-            CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            CreatePasswordHash(password, out passwordHash, out passwordSalt);  // using 'out' keyword to pass them as references
 
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
@@ -56,7 +56,7 @@ namespace DatingApp.API.Data
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
-            using (var hmac = new System.Security.Cryptography.HMACSHA512())
+            using (var hmac = new System.Security.Cryptography.HMACSHA512())  // 'using' keyword is to ensure this method is called after class is finished
             {
                 passwordSalt = hmac.Key;
                 passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));

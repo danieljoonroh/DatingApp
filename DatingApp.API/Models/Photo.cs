@@ -20,5 +20,7 @@ namespace DatingApp.API.Models
 
         public int UserId { get; set; }
 
+        // always have to add migration when a model is created or an existing model is updated
+
     }
 }
