@@ -14,4 +14,4 @@ Web application using ASPNET Core (v2.1), Entity Framework Core and Angular (v6)
 ## WireFrames
 
 <img src="https://i.imgur.com/UDT3N0k.png">
-<img src="https://i.imgur.com/ShsNPLB.png">
+<img src="https://i.imgur.com/O8CySFg.png">
